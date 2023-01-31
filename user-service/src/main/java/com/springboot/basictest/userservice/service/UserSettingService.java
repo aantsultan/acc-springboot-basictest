@@ -1,8 +1,10 @@
 package com.springboot.basictest.userservice.service;
 
-import com.springboot.basictest.userservice.entity.UserEntity;
-import com.springboot.basictest.userservice.entity.UserSettingEntity;
+import com.springboot.basictest.userservice.dto.UserResponseDto;
+import com.springboot.basictest.userservice.dto.UserSettingRequestDto;
+
+import java.util.List;
 
 public interface UserSettingService {
-    UserEntity update(int id, UserSettingEntity userSettingEntity);
+    UserResponseDto update(int id, List<UserSettingRequestDto> userSettingRequestDtoList);
 }

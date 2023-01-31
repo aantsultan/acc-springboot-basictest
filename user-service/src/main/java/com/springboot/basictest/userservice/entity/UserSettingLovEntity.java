@@ -2,11 +2,11 @@ package com.springboot.basictest.userservice.entity;
 
 public class UserSettingLovEntity {
 
-    private String biometricLogin;
-    private String pushNotification;
-    private String smsNotification;
-    private String showOnboarding;
-    private String widgetOrder;
+    private String biometricLogin = "false";
+    private String pushNotification = "false";
+    private String smsNotification = "false";
+    private String showOnboarding = "false";
+    private String widgetOrder = "1,2,3,4,5";
 
     public String getBiometricLogin() {
         return biometricLogin;

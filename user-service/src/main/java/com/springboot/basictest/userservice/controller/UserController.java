@@ -1,5 +1,9 @@
 package com.springboot.basictest.userservice.controller;
 
+import com.springboot.basictest.userservice.dto.ListUserResponseDto;
+import com.springboot.basictest.userservice.dto.UserRequestDto;
+import com.springboot.basictest.userservice.dto.UserResponseDto;
+import com.springboot.basictest.userservice.dto.UserSettingRequestDto;
 import com.springboot.basictest.userservice.entity.UserEntity;
 import com.springboot.basictest.userservice.entity.UserSettingEntity;
 import com.springboot.basictest.userservice.service.UserService;
@@ -19,28 +23,28 @@ public class UserController {
     UserSettingService userSettingService;
 
     @GetMapping("/v1/users")
-    public List<UserEntity> retrieveAllUser(){
+    public ListUserResponseDto retrieveAllUser(){
         return userService.findAll();
     }
 
     @GetMapping("/v1/users/{id}")
-    public UserEntity retrieveUser(@PathVariable int id){
+    public UserResponseDto retrieveUser(@PathVariable int id){
         return userService.findById(id);
     }
 
     @PostMapping("/v1/users")
-    public UserEntity createUser(@Valid @RequestBody UserEntity userEntity){
-        return userService.save(userEntity);
+    public UserResponseDto createUser(@Valid @RequestBody UserRequestDto userRequestDto){
+        return userService.save(userRequestDto);
     }
 
     @PutMapping("/v1/users/{id}")
-    public UserEntity updateUser(@PathVariable int id, @RequestBody UserEntity userEntity){
-        return userService.update(id, userEntity);
+    public UserResponseDto updateUser(@PathVariable int id, @RequestBody UserRequestDto userRequestDto){
+        return userService.update(id, userRequestDto);
     }
 
     @PutMapping("/v1/users/{id}/settings")
-    public UserEntity updateUserSetting(@PathVariable int id, @RequestBody UserSettingEntity userSettingEntity){
-        return userSettingService.update(id, userSettingEntity);
+    public UserResponseDto updateUserSetting(@PathVariable int id, @RequestBody List<UserSettingRequestDto> userSettingRequestDtoList){
+        return userSettingService.update(id, userSettingRequestDtoList);
     }
 
     @DeleteMapping("/v1/users/{id}")
@@ -49,7 +53,7 @@ public class UserController {
     }
 
     @PutMapping("/v1/users/{id}/refresh")
-    public UserEntity refresh(@PathVariable int id){
+    public UserResponseDto refresh(@PathVariable int id){
         return userService.refresh(id);
     }
 }

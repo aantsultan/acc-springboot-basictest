@@ -1,11 +1,11 @@
 package com.springboot.basictest.userservice.service;
 
-import com.springboot.basictest.userservice.entity.UserEntity;
+import com.springboot.basictest.userservice.dto.ListUserResponseDto;
+import com.springboot.basictest.userservice.dto.UserRequestDto;
+import com.springboot.basictest.userservice.dto.UserResponseDto;
 import com.springboot.basictest.userservice.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
 
 @Service
 public class UserServiceImpl implements UserService{
@@ -14,22 +14,22 @@ public class UserServiceImpl implements UserService{
     UserRepository userRepository;
 
     @Override
-    public List<UserEntity> findAll() {
-        return userRepository.findAll();
-    }
-
-    @Override
-    public UserEntity findById(int id) {
+    public ListUserResponseDto findAll() {
         return null;
     }
 
     @Override
-    public UserEntity save(UserEntity userEntity) {
+    public UserResponseDto findById(int id) {
         return null;
     }
 
     @Override
-    public UserEntity update(int id, UserEntity userEntity) {
+    public UserResponseDto save(UserRequestDto userRequestDto) {
+        return null;
+    }
+
+    @Override
+    public UserResponseDto update(int id, UserRequestDto userRequestDto) {
         return null;
     }
 
@@ -39,7 +39,7 @@ public class UserServiceImpl implements UserService{
     }
 
     @Override
-    public UserEntity refresh(int id) {
+    public UserResponseDto refresh(int id) {
         return null;
     }
 }
