@@ -5,6 +5,7 @@ import com.springboot.basictest.userservice.dto.UserRequestDto;
 import com.springboot.basictest.userservice.dto.UserResponseDto;
 import com.springboot.basictest.userservice.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -13,23 +14,24 @@ public class UserServiceImpl implements UserService{
     @Autowired
     UserRepository userRepository;
 
+
     @Override
-    public ListUserResponseDto findAll() {
+    public ResponseEntity<ListUserResponseDto> findAll() {
         return null;
     }
 
     @Override
-    public UserResponseDto findById(int id) {
+    public ResponseEntity<UserResponseDto> findById(int id) {
         return null;
     }
 
     @Override
-    public UserResponseDto save(UserRequestDto userRequestDto) {
+    public ResponseEntity<UserResponseDto> save(UserRequestDto userRequestDto) {
         return null;
     }
 
     @Override
-    public UserResponseDto update(int id, UserRequestDto userRequestDto) {
+    public ResponseEntity<UserResponseDto> update(int id, UserRequestDto userRequestDto) {
         return null;
     }
 
@@ -39,7 +41,7 @@ public class UserServiceImpl implements UserService{
     }
 
     @Override
-    public UserResponseDto refresh(int id) {
+    public ResponseEntity<UserResponseDto> refresh(int id) {
         return null;
     }
 }
