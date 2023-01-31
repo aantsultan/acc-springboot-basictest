@@ -10,18 +10,20 @@ import java.time.LocalDate;
 
 public class UserRequestDto {
     @NotNull
+    @Pattern(regexp = ".*[0-9]+$.*", message = "Invalid value for field ssn, rejected value: ${validatedValue}")
+    @Size(max = 16, message = "Invalid value for field ssn, rejected value: ${validatedValue}")
     private String ssn;
-    @Size(min = 3, max = 100)
-    @Pattern(regexp = "[^A-Za-z]")
+    @Size(min = 3, max = 100, message = "Invalid value for field first_name, rejected value: ${validatedValue}")
+    @Pattern(regexp = ".*[a-zA-Z]+$.*", message = "Invalid value for field first_name, rejected value: ${validatedValue}")
     @NotNull
     @JsonProperty("first_name")
     private String firstName;
-    @Size(min = 3, max = 100)
-    @Pattern(regexp = "[^A-Za-z]")
+    @Size(min = 3, max = 100, message = "Invalid value for field last_name, rejected value: ${validatedValue}")
+    @Pattern(regexp = ".*[a-zA-Z]+$.*", message = "Invalid value for field last_name, rejected value: ${validatedValue}")
     @NotNull
     @JsonProperty("last_name")
     private String lastName;
-    @Past
+    @Past(message = "Invalid value for field birthDate, rejected value: ${validatedValue}")
     @JsonProperty("birth_date")
     private LocalDate birthDate;
 

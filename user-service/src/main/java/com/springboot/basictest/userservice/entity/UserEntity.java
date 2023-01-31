@@ -19,43 +19,16 @@ public class UserEntity {
     @Id
     @GeneratedValue
     private Integer id;
-    @NotNull
     private String ssn;
-    @Size(min = 3, max = 100)
-    @Pattern(regexp = "[^A-Za-z]")
-    @NotNull
-    @JsonProperty("first_name")
     private String firstName;
-    @Size(min = 3, max = 100)
-    @Pattern(regexp = "[^A-Za-z]")
-    @Null
-    @JsonProperty("middle_name")
     private String middleName;
-    @Size(min = 3, max = 100)
-    @Pattern(regexp = "[^A-Za-z]")
-    @Null
-    @JsonProperty("family_name")
     private String familyName;
-    @Past
-    @JsonProperty("birth_date")
     private LocalDate birthDate;
-    @JsonProperty("created_time")
     private LocalDateTime createdTime;
-    @JsonProperty("updated_time")
     private LocalDateTime updatedTime;
-    @NotNull
-    @Size(max = 100)
-    @JsonProperty("created_by")
     private String createdBy;
-    @NotNull
-    @Size(max = 100)
-    @JsonProperty("updated_by")
     private String updatedBy;
-    @NotNull
-    @JsonProperty("is_active")
     private Boolean isActive;
-    @Null
-    @JsonProperty("deleted_time")
     private LocalDateTime deletedTime;
 
     @OneToMany(mappedBy = "user")

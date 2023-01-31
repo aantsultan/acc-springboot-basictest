@@ -13,10 +13,10 @@ public class UserSettingEntity {
     private Integer id;
     @Size(min = 3, max = 100)
     @NotNull
-    private String key;
+    private String keyName;
     @Size(min = 3, max = 100)
     @NotNull
-    private String value;
+    private String valueName;
     @ManyToOne(fetch = FetchType.LAZY)
     @JsonIgnore
     private UserEntity user;
@@ -29,20 +29,20 @@ public class UserSettingEntity {
         this.id = id;
     }
 
-    public String getKey() {
-        return key;
+    public String getKeyName() {
+        return keyName;
     }
 
-    public void setKey(String key) {
-        this.key = key;
+    public void setKeyName(String keyName) {
+        this.keyName = keyName;
     }
 
-    public String getValue() {
-        return value;
+    public String getValueName() {
+        return valueName;
     }
 
-    public void setValue(String value) {
-        this.value = value;
+    public void setValueName(String valueName) {
+        this.valueName = valueName;
     }
 
     public UserEntity getUser() {
@@ -53,12 +53,21 @@ public class UserSettingEntity {
         this.user = user;
     }
 
+    public UserSettingEntity(){
+
+    }
+    public UserSettingEntity(String keyName, String valueName, UserEntity user) {
+        this.keyName = keyName;
+        this.valueName = valueName;
+        this.user = user;
+    }
+
     @Override
     public String toString() {
         return "UserSettingEntity{" +
                 "id=" + id +
-                ", key='" + key + '\'' +
-                ", value='" + value + '\'' +
+                ", keyName='" + keyName + '\'' +
+                ", valueName='" + valueName + '\'' +
                 ", user=" + user +
                 '}';
     }

@@ -1,12 +1,22 @@
-package com.springboot.basictest.userservice.entity;
+package com.springboot.basictest.userservice.dto;
 
-public class UserSettingLovEntity {
+public class UserSettingLovDto {
 
-    private String biometricLogin = "false";
-    private String pushNotification = "false";
-    private String smsNotification = "false";
-    private String showOnboarding = "false";
-    private String widgetOrder = "1,2,3,4,5";
+    private String biometricLogin;
+    private String pushNotification;
+    private String smsNotification;
+    private String showOnboarding;
+    private String widgetOrder;
+
+    public UserSettingLovDto getInstance(){
+        UserSettingLovDto userSettingLovDto = new UserSettingLovDto();
+        userSettingLovDto.setBiometricLogin("false");
+        userSettingLovDto.setPushNotification("false");
+        userSettingLovDto.setSmsNotification("false");
+        userSettingLovDto.setShowOnboarding("false");
+        userSettingLovDto.setWidgetOrder("1,2,3,4,5");
+        return userSettingLovDto;
+    }
 
     public String getBiometricLogin() {
         return biometricLogin;

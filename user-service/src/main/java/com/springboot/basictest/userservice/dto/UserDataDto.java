@@ -1,10 +1,8 @@
 package com.springboot.basictest.userservice.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import jakarta.validation.constraints.*;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 
 public class UserDataDto {
 
@@ -17,15 +15,15 @@ public class UserDataDto {
     @JsonProperty("birth_date")
     private LocalDate birthDate;
     @JsonProperty("created_time")
-    private LocalDateTime createdTime;
+    private String createdTime;
     @JsonProperty("updated_time")
-    private LocalDateTime updatedTime;
+    private String updatedTime;
     @JsonProperty("created_by")
     private String createdBy;
     @JsonProperty("updated_by")
     private String updatedBy;
     @JsonProperty("is_active")
-    private Boolean isActive;
+    private Boolean active;
 
     public Integer getId() {
         return id;
@@ -67,19 +65,19 @@ public class UserDataDto {
         this.birthDate = birthDate;
     }
 
-    public LocalDateTime getCreatedTime() {
+    public String getCreatedTime() {
         return createdTime;
     }
 
-    public void setCreatedTime(LocalDateTime createdTime) {
+    public void setCreatedTime(String createdTime) {
         this.createdTime = createdTime;
     }
 
-    public LocalDateTime getUpdatedTime() {
+    public String getUpdatedTime() {
         return updatedTime;
     }
 
-    public void setUpdatedTime(LocalDateTime updatedTime) {
+    public void setUpdatedTime(String updatedTime) {
         this.updatedTime = updatedTime;
     }
 
@@ -100,16 +98,16 @@ public class UserDataDto {
     }
 
     public Boolean getActive() {
-        return isActive;
+        return active;
     }
 
     public void setActive(Boolean active) {
-        isActive = active;
+        this.active = active;
     }
 
     public UserDataDto(Integer id, String ssn, String firstName, String lastName, LocalDate birthDate,
-                       LocalDateTime createdTime, LocalDateTime updatedTime, String createdBy, String updatedBy,
-                       Boolean isActive) {
+                       String createdTime, String updatedTime, String createdBy, String updatedBy,
+                       Boolean active) {
         this.id = id;
         this.ssn = ssn;
         this.firstName = firstName;
@@ -119,7 +117,7 @@ public class UserDataDto {
         this.updatedTime = updatedTime;
         this.createdBy = createdBy;
         this.updatedBy = updatedBy;
-        this.isActive = isActive;
+        this.active = active;
     }
 
     public UserDataDto() {

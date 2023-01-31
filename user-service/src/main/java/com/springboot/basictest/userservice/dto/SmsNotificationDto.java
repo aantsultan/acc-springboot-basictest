@@ -1,9 +1,13 @@
 package com.springboot.basictest.userservice.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Pattern;
 
 public class SmsNotificationDto {
 
+    @NotNull
+    @Pattern(regexp = "^false$|^true$", message = "Invalid value for field sms_notification, rejected value: ${validatedValue}")
     @JsonProperty("sms_notification")
     private String smsNotification;
 
