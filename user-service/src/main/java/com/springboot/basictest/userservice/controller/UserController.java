@@ -1,7 +1,6 @@
 package com.springboot.basictest.userservice.controller;
 
 import com.springboot.basictest.userservice.dto.*;
-import com.springboot.basictest.userservice.entity.UserEntity;
 import com.springboot.basictest.userservice.service.UserService;
 import com.springboot.basictest.userservice.service.UserSettingService;
 import com.springboot.basictest.userservice.util.UserSettingEnum;
@@ -12,9 +11,7 @@ import jakarta.validation.ValidatorFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import java.net.URI;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
